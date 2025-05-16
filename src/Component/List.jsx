@@ -13,7 +13,7 @@ export default function List() {
     };
     return (
         <>
-            <h1>TodoList</h1><div>Number cards: {numberCard.length}</div>
+            <div>Number cards: {numberCard.length}</div>
             <button onClick={handleClickCreate}>+</button> Create new card
             {numberCard.map((id) => (
                 <Card key={id} id={id} onDelete={handleClickDelete} />

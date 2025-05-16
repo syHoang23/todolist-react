@@ -2,6 +2,9 @@ import List from './Component/List';
 
 export default function App() {
   return (
-    <List />
+    <>
+      <h1>TodoList</h1>
+      <List />
+    </>
   )
 }
