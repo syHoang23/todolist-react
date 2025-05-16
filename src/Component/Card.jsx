@@ -35,7 +35,8 @@ export default function Card({id, onDelete}) {
             </span>
             <button onClick={handleClickEdit}>Edit</button>
             <button onClick={handleClickDelete}>Delete</button>
-            {available && <><input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} /><button onClick={handleClickSave}>Save</button></>}
+            {available && <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />}
+            {available && <button onClick={handleClickSave}>Save</button>}
             {available && <button onClick={handleClickCancel}>Cancel</button>}
         </>
     );

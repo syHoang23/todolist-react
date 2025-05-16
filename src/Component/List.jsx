@@ -9,7 +9,7 @@ export default function List() {
         setNextId(nextId + 1);
     };
     const handleClickDelete = (id) => {
-        setNumberCard(numberCard.filter((number) => number !== id));
+        setNumberCard(numberCard.filter((key) => key !== id));
     };
     return (
         <>
