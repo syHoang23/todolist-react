@@ -27,7 +27,7 @@ export default function TodoList() {
     };
 
     return (
-        <div>
+        <div className='inline-block align-middle'>
             <h2>Todo List</h2>
             <input
                 type="text"
@@ -36,7 +36,7 @@ export default function TodoList() {
                 onChange={onChangeInput}
                 onKeyDown={enterKey}
             />
-            <button onClick={handleAddTodo} >+</button>
+            <button className='bg-sky-500 hover:bg-red-700' onClick={handleAddTodo} >+</button>
             <List todos={todos} onDelete={handleDelete} />
         </div>
     );
