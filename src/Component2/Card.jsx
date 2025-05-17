@@ -28,7 +28,7 @@ export default function Card({ key, id, value, onDelete }) {
 
     return (
         <>
-            <div id={id} key={key}>
+            <div className='flex items-center' id={id} key={key}>
                 {isEdit ? (
                     <>
                         <Input value={input} onChange={onChange} onSave={onSave}/>
@@ -37,7 +37,7 @@ export default function Card({ key, id, value, onDelete }) {
                 ) : (
                     <>
                         <input type="checkbox" onChange={handleChangeCheckbox} checked={isChecked}/>
-                        <span style={{ textDecoration: isChecked ? 'line-through' : 'none', 
+                        <span className='inline-flex items-baseline ' style={{ textDecoration: isChecked ? 'line-through' : 'none', 
                                     opacity: isChecked ? 0.5 : 1 }}> {input} </span>
                         <button onClick={handleClickEdit}>Edit</button>
                         <button onClick={handleClickDelete}>Delete</button>

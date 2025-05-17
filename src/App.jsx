@@ -2,7 +2,7 @@ import TodoList from "./Component2/TodoList";
 
 export default function App() {
   return (
-    <div className="box-border size-100 border-4 p-14">
+    <div className="bg-gray-500 p-9 rounded shadow-md text-center">
       <TodoList />
     </div>
   );
