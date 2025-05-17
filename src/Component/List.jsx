@@ -11,7 +11,9 @@ export default function List() {
     const [isEdit, setIsEdit] = useState(false);
     // Linh
 
-    
+    const changeInput = (e) => {
+        setInputValue(e.target.value);
+    };
     const handleClickCreate = () => {
         setNumberCard([...numberCard, nextId]);
         setNextId(nextId + 1);
@@ -40,8 +42,8 @@ export default function List() {
         <>
             <div>Number cards: {numberCard.length}</div>
             <div>
-                <input type="text" />
-                <button onClick={handleClickCreate}>+</button> 
+                <input type="text" onChange={changeInput}/>
+                <button onClick={handleClickCreate}>+</button>
             </div>
 
             {/* Linh-TODO: Need to change or move this logic to Card component  */}
@@ -59,9 +61,9 @@ export default function List() {
                 <button onClick={onEdit}>Edit</button>
             </div>
 
-            {/* This is List  */}
+            {/* This is List  */}   
             {numberCard.map((id) => (
-                <Card key={id} id={id} onDelete={handleClickDelete} />
+                <Card key={id} id={id} value={'aaa'} onCreate={true} onDelete={handleClickDelete} />
             ))}
         </>
     );

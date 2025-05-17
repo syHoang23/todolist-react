@@ -1,19 +1,19 @@
 import {useState} from 'react';
 
-export default function Card({id, onDelete}) {
+export default function Card({id, onCreate, inputValue, onDelete}) {
+    const [value, setValue] = useState('');
     const [isChecked, setIsChecked] = useState(false);
-    const [value, setValue] = useState('Todo');
-    const [inputValue, setInputValue] = useState('');
     const [available, setAvailable] = useState(false);
     const handleClickCheck = () => {
         setIsChecked(!isChecked);
     };
+    if (onCreate(true))
+    {
+        setValue(inputValue);
+        onCreate(false);
+    }
     const handleClickEdit = () => {
         setAvailable(true);
-    };
-    const handleClickSave = () => {
-        setValue(inputValue);
-        setAvailable(false);
     };
     const handleClickDelete = () => {
         onDelete(id);
@@ -35,8 +35,8 @@ export default function Card({id, onDelete}) {
             </span>
             <button onClick={handleClickEdit}>Edit</button>
             <button onClick={handleClickDelete}>Delete</button>
-            {available && <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />}
-            {available && <button onClick={handleClickSave}>Save</button>}
+            {available && <input type="text" />}
+            {available && <button >Save</button>}
             {available && <button onClick={handleClickCancel}>Cancel</button>}
         </>
     );
