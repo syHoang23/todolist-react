@@ -28,15 +28,18 @@ export default function TodoList() {
 
     return (
         <div className='inline-block align-middle'>
-            <h2>Todo List</h2>
-            <input
-                type="text"
-                value={inputValue}
-                placeholder="..."
-                onChange={onChangeInput}
-                onKeyDown={enterKey}
-            />
-            <button className='bg-sky-500 hover:bg-red-700' onClick={handleAddTodo} >+</button>
+            <div><h2 className='text-blue-900 text-3xl float-left font-mono font-bold text-shadow-2xs select-none'>To-Do List</h2><br/></div>
+            <div>
+                <input className='text-black border-2 border-amber-600 rounded-full p-1.5 mb-2.5 mr-2 '
+                    type="text"
+                    value={inputValue}
+                    placeholder="Add a new task..."
+                    onChange={onChangeInput}
+                    onKeyDown={enterKey}
+                />
+                <button className='bg-sky-500 hover:bg-red-700 rounded-b-full mb-2.5' onClick={handleAddTodo} > + </button>
+            </div>
+            
             <List todos={todos} onDelete={handleDelete} />
         </div>
     );

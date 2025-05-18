@@ -7,6 +7,9 @@ export default function Input({ value, onChange, onSave }) {
             value={value} 
             onChange={onChange} 
             onKeyDown={onSave}
+            spellcheck="false"
+            className="caret-pink-500 text-orange-600"
+
         />
     );
 }

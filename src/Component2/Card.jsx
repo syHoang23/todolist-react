@@ -12,7 +12,7 @@ export default function Card({ key, id, value, onDelete }) {
     const handleClickEdit = () => {
         setIsEdit(true);
     };
-    const handleClickCancel = () => {
+    const handleClickSave = () => {
         setIsEdit(false);
     };
     const onChange = (e) => {
@@ -31,16 +31,47 @@ export default function Card({ key, id, value, onDelete }) {
             <div className='flex items-center' id={id} key={key}>
                 {isEdit ? (
                     <>
-                        <Input value={input} onChange={onChange} onSave={onSave}/>
-                        <button onClick={handleClickCancel}>Cancel</button>
+                        <div className="flex items-center justify-between mb-2 w-full">
+                            <Input value={input} onChange={onChange} onSave={onSave}/>
+                            <button onClick={handleClickSave}>Save</button>
+                        </div>
                     </>
                 ) : (
                     <>
-                        <input type="checkbox" onChange={handleChangeCheckbox} checked={isChecked}/>
-                        <span className='inline-flex items-baseline ' style={{ textDecoration: isChecked ? 'line-through' : 'none', 
-                                    opacity: isChecked ? 0.5 : 1 }}> {input} </span>
-                        <button onClick={handleClickEdit}>Edit</button>
-                        <button onClick={handleClickDelete}>Delete</button>
+                        <div className="flex items-center justify-between mb-1 w-full">
+                            <div className="flex items-center">
+                                <input
+                                type="checkbox"
+                                onChange={handleChangeCheckbox}
+                                checked={isChecked}
+                                className="mr-2 accent-orange-500 rounded-full"
+                                />
+                                <span
+                                className="inline-flex items-baseline text-gray-950 "
+                                style={{
+                                    textDecoration: isChecked ? 'line-through' : 'none',
+                                    opacity: isChecked ? 0.5 : 1,
+                                }}
+                                >
+                                {input}
+                                </span>
+                            </div>
+
+                            <div className="flex gap-1">
+                                <button
+                                className="bg-black text-white px-3 py-1 rounded"
+                                onClick={handleClickEdit}
+                                >
+                                Edit
+                                </button>
+                                <button
+                                className="bg-black text-white px-3 py-1 rounded"
+                                onClick={handleClickDelete}
+                                >
+                                Delete
+                                </button>
+                            </div>
+                            </div>
                     </>
                 )}
             </div>
