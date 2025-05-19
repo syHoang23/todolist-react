@@ -44,12 +44,21 @@ export default function Card({ key, id, value, onDelete }) {
                     <>
                         <div className="flex items-center justify-between mb-1 w-full">
                             <div className="flex items-center">
+                                {isChecked ? (
+                                <div onClick={handleChangeCheckbox} className='text-white mr-2 bg-orange-500 rounded-full w-5 h-5 flex items-center justify-center'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-3">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </div>
+                                
+                                ):(
                                 <input
-                                type="checkbox"
-                                onChange={handleChangeCheckbox}
-                                checked={isChecked}
-                                className="mr-2 accent-orange-500 w-5 h-5 rounded-full appearance-none border-2 border-gray-300 checked:bg-orange-500 checked:border-transparent focus:outline-none transition duration-200 cursor-pointer"
+                                    type="checkbox"
+                                    onChange={handleChangeCheckbox}
+                                    checked={isChecked}
+                                    className="mr-2 accent-orange-500 w-5 h-5 rounded-full appearance-none border-2 border-gray-300 checked:bg-orange-500 checked:border-transparent focus:outline-none transition duration-200 cursor-pointer"
                                 />
+                                )}
                                 <span
                                 onClick={handleChangeCheckbox}
                                 className="inline-flex items-baseline text-gray-950 select-none w-[150px] overflow-auto focus:outline-none transition cursor-pointer"
