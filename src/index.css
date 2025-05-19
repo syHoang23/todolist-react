@@ -7,8 +7,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -41,7 +40,6 @@ button {
   border-radius: 100px;
   font-weight: 500;
   font-family: inherit;
-  background-color: rgb(210, 108, 5);
 }
 button:hover {
   border-color: #646cff;
