@@ -27,24 +27,21 @@ export default function TodoList() {
     };
 
     return (
-        <div className='inline-block align-middle'>
-                <h2 className='text-blue-900 text-3xl float-left font-mono font-bold select-none'>To-Do List</h2>
-            <br/>
-            <br/>
-            <div className='grid grid-cols-4 mb-2.5'>
-                <div className='float-left col-span-3'>
-                    <input className='text-black border-2 border-amber-500 focus:outline-none focus:border-amber-600 rounded-full h-[46px] pl-5 w-[300px]'
-                        type="text"
-                        value={inputValue}
-                        placeholder="Add a new task..."
-                        onChange={onChangeInput}
-                        onKeyDown={enterKey}
-                    />
-                </div>
-                <div className='float-right col-span-1'>
-                    <button className='col-span-1 w-[100px] h-[46px] float-right bg-orange-500 hover:bg-orange-700 rounded-b-full' onClick={handleAddTodo} > Add </button>
+        <div className='flex flex-col items-start justify-start gap-6'>
+            <h2 className='text-blue-900 text-3xl float-left font-mono font-bold select-none'>To-Do List</h2>
+            <div className='relative w-full'>
+                <input className='w-full text-sm bg-gray-300 border-none text-black border-2 border-orange-500 focus:outline-none focus:border-orange-600 rounded-full py-4 px-8 '
+                    type="text"
+                    value={inputValue}
+                    placeholder="Add your task"
+                    onChange={onChangeInput}
+                    onKeyDown={enterKey}
+                />
+                <div className='absolute top-0 right-0 bottom-0 flex items-center justify-center'>
+                    <button className='py-4 px-10 cursor-pointer hover:border-none bg-[rgb(255,100,59)] hover:bg-orange-600 rounded-4xl' onClick={handleAddTodo} > Add </button>
                 </div>
             </div>
+                
             
             <List todos={todos} onDelete={handleDelete} />
         </div>
