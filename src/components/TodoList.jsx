@@ -8,7 +8,7 @@ export default function TodoList() {
     const onChangeInput = (e) => {
         setInputValue(e.target.value);
     };
-    const addTodo = () => {
+    const addRow = () => {
         if (inputValue.trim() === '') return;
         const newTodo = {
             id: Date.now(),
@@ -19,7 +19,7 @@ export default function TodoList() {
     };
     const enterKey = (e) => {
         if (e.key === 'Enter') {
-            addTodo();
+            addRow();
         }
     }
     const onDelete = (id) => {
@@ -39,7 +39,7 @@ export default function TodoList() {
                     onKeyDown={enterKey}
                 />
                 <div className='absolute top-0 right-0 bottom-0 flex items-center justify-center'>
-                    <button className='py-4 px-10 cursor-pointer hover:border-none bg-[rgb(255,100,59)] hover:bg-orange-600 rounded-4xl' onClick={addTodo} > Add </button>
+                    <button className='py-4 px-10 cursor-pointer hover:border-none bg-[rgb(255,100,59)] hover:bg-orange-600 rounded-4xl' onClick={addRow} > Add </button>
                 </div>
             </div>
         </div>
