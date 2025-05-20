@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import List from './List';
+import logo from '../assets/note-svgrepo-com.svg';
 
 export default function TodoList() {
     const [inputValue, setInputValue] = useState('');
@@ -29,7 +30,10 @@ export default function TodoList() {
     return (
         <>
         <div className='flex flex-col items-start justify-start gap-4'>
-            <h2 className='text-blue-900 text-3xl float-left font-mono font-bold select-none'>To-Do List</h2>
+            <div className='flex items-center gap-2'>
+                <h2 className='text-blue-900 text-3xl float-left font-mono w-full font-bold select-none'>To-Do List</h2>
+                <img className='w-6 h-6 shadow-md' src={logo}/>
+            </div>
             <div className='relative w-full'>
                 <input className='pr-32 w-full text-sm bg-gray-300 border-none text-black border-2 border-orange-500 focus:outline-none focus:border-orange-600 rounded-full py-4 px-8 '
                     type="text"
