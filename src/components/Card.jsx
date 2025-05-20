@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import Input from './Input';
 
 export default function Card({ key, id, value, onDelete }) {
@@ -61,7 +61,7 @@ export default function Card({ key, id, value, onDelete }) {
                                 )}
                                 <p
                                     onClick={handleChangeCheckbox}
-                                    className="text-gray-950 select-none focus:outline-none transition cursor-pointer w-full max-w-[174px] items-center break-words"
+                                    className="text-gray-950 select-none focus:outline-none transition cursor-pointer w-full max-w-[180px] items-center break-words"
                                     style={{
                                         textDecoration: isChecked ? 'line-through' : 'none',
                                         opacity: isChecked ? 0.5 : 1,

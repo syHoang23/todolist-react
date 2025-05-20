@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import List from './List';
 
 export default function TodoList() {
@@ -8,7 +8,7 @@ export default function TodoList() {
     const onChangeInput = (e) => {
         setInputValue(e.target.value);
     };
-    const handleAddTodo = () => {
+    const addTodo = () => {
         if (inputValue.trim() === '') return;
         const newTodo = {
             id: Date.now(),
@@ -19,10 +19,10 @@ export default function TodoList() {
     };
     const enterKey = (e) => {
         if (e.key === 'Enter') {
-            handleAddTodo();
+            addTodo();
         }
     }
-    const handleDelete = (id) => {
+    const onDelete = (id) => {
         setTodos(array => array.filter(todo => todo.id !== id));
     };
 
@@ -31,7 +31,7 @@ export default function TodoList() {
         <div className='flex flex-col items-start justify-start gap-4'>
             <h2 className='text-blue-900 text-3xl float-left font-mono font-bold select-none'>To-Do List</h2>
             <div className='relative w-full'>
-                <input className='w-full text-sm bg-gray-300 border-none text-black border-2 border-orange-500 focus:outline-none focus:border-orange-600 rounded-full py-4 px-8 '
+                <input className='pr-32 w-full text-sm bg-gray-300 border-none text-black border-2 border-orange-500 focus:outline-none focus:border-orange-600 rounded-full py-4 px-8 '
                     type="text"
                     value={inputValue}
                     placeholder="Add your task"
@@ -39,12 +39,12 @@ export default function TodoList() {
                     onKeyDown={enterKey}
                 />
                 <div className='absolute top-0 right-0 bottom-0 flex items-center justify-center'>
-                    <button className='py-4 px-10 cursor-pointer hover:border-none bg-[rgb(255,100,59)] hover:bg-orange-600 rounded-4xl' onClick={handleAddTodo} > Add </button>
+                    <button className='py-4 px-10 cursor-pointer hover:border-none bg-[rgb(255,100,59)] hover:bg-orange-600 rounded-4xl' onClick={addTodo} > Add </button>
                 </div>
             </div>
         </div>
         <div className='flex flex-col'>
-            <List todos={todos} onDelete={handleDelete} />
+            <List todos={todos} onDelete={onDelete} />
         </div>
         </>
     );
