@@ -7,8 +7,8 @@ export default function Input({ value, onChange, onSave }) {
             value={value} 
             onChange={onChange} 
             onKeyDown={onSave}
-            spellcheck="false"
-            className="p-3 mr-2 text-black border-2 border-orange-500 focus:outline-none focus:border-orange-600 rounded-2xl h-[40px] w-[255px] "
+            spellCheck="false"
+            className="bg-gray-300 px-2 py-1 text-black focus:outline-none focus:border-orange-600 rounded-2xl w-full"
         />
     );
 }

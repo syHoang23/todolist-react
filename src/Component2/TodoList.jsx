@@ -27,7 +27,8 @@ export default function TodoList() {
     };
 
     return (
-        <div className='flex flex-col items-start justify-start gap-6'>
+        <>
+        <div className='flex flex-col items-start justify-start gap-4'>
             <h2 className='text-blue-900 text-3xl float-left font-mono font-bold select-none'>To-Do List</h2>
             <div className='relative w-full'>
                 <input className='w-full text-sm bg-gray-300 border-none text-black border-2 border-orange-500 focus:outline-none focus:border-orange-600 rounded-full py-4 px-8 '
@@ -41,9 +42,10 @@ export default function TodoList() {
                     <button className='py-4 px-10 cursor-pointer hover:border-none bg-[rgb(255,100,59)] hover:bg-orange-600 rounded-4xl' onClick={handleAddTodo} > Add </button>
                 </div>
             </div>
-                
-            
+        </div>
+        <div className='flex flex-col'>
             <List todos={todos} onDelete={handleDelete} />
         </div>
+        </>
     );
 }

@@ -2,7 +2,7 @@ import Card from './Card';
 
 export default function List({ todos, onDelete }) {
     return (
-        <div>
+        <div className='flex flex-col mt-4 rounded-2xl gap-1 flex-wrap'>
             {todos.map(todo => (
                 <Card
                 key={todo.id}

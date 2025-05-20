@@ -28,12 +28,12 @@ export default function Card({ key, id, value, onDelete }) {
 
     return (
         <>
-            <div className='flex items-center justify-between mb-1 w-full' id={id} key={key}>
+            <div className='flex-wrap w-full' id={id} key={key}>
                 {isEdit ? (
                     <>
-                        <div className="flex items-center justify-between mb-1 w-full">
+                        <div className="flex flex-row gap-0.5">
                             <Input value={input} onChange={onChange} onSave={onSave}/>
-                            <button className='text-white px-3 py-1 rounded bg-orange-500 hover:bg-orange-600' onClick={handleClickSave}>
+                            <button className='text-white px-4 py-2 rounded-2xl bg-[rgb(255,100,59)] hover:bg-orange-600 cursor-pointer' onClick={handleClickSave}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m7.49 12-3.75 3.75m0 0 3.75 3.75m-3.75-3.75h16.5V4.499" />
                                 </svg>
@@ -42,10 +42,10 @@ export default function Card({ key, id, value, onDelete }) {
                     </>
                 ) : (
                     <>
-                        <div className="flex items-center justify-between mb-1 w-full">
-                            <div className="flex items-center">
+                        <div className="flex flex-row gap-0.5">
+                            <div className="flex items-center w-full">
                                 {isChecked ? (
-                                <div onClick={handleChangeCheckbox} className='text-white mr-2 bg-orange-500 rounded-full w-5 h-5 flex items-center justify-center cursor-pointer'>
+                                <div onClick={handleChangeCheckbox} className='text-white mr-2 bg-[rgb(255,100,59)] rounded-full w-5 h-5 flex items-center justify-center cursor-pointer'>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-3">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                                     </svg>
@@ -61,7 +61,7 @@ export default function Card({ key, id, value, onDelete }) {
                                 )}
                                 <span
                                 onClick={handleChangeCheckbox}
-                                className="inline-flex items-baseline text-gray-950 select-none border-2 overflow-auto focus:outline-none transition cursor-pointer"
+                                className="text-gray-950 select-none focus:outline-none transition cursor-pointer w-full max-w-[174px] items-center "
                                 style={{
                                     textDecoration: isChecked ? 'line-through' : 'none',
                                     opacity: isChecked ? 0.5 : 1,
@@ -71,9 +71,9 @@ export default function Card({ key, id, value, onDelete }) {
                                 </span>
                             </div>
 
-                            <div className="flex gap-1">
+                            <div className="flex gap-0.5 items-center">
                                 <button
-                                className="text-white px-3 py-1 rounded bg-orange-500 hover:bg-orange-600"
+                                className="text-white px-4 py-4 rounded-2xl bg-[rgb(255,100,59)] hover:bg-orange-600 cursor-pointer"
                                 onClick={handleClickEdit}
                                 >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
@@ -81,7 +81,7 @@ export default function Card({ key, id, value, onDelete }) {
                                 </svg>
                                 </button>
                                 <button
-                                className="text-white px-3 py-1 rounded bg-orange-500 hover:bg-orange-600"
+                                className="text-white px-4 py-4 rounded-2xl bg-[rgb(255,100,59)] hover:bg-orange-600 cursor-pointer"
                                 onClick={handleClickDelete}
                                 >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
@@ -89,7 +89,7 @@ export default function Card({ key, id, value, onDelete }) {
                                 </svg>
                                 </button>
                             </div>
-                            </div>
+                        </div>
                     </>
                 )}
             </div>
