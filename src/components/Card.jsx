@@ -42,7 +42,7 @@ export default function Card({ key, id, value, onDelete }) {
                     </>
                 ) : (
                     <>
-                        <div className="flex flex-row gap-0.5">
+                        <div className="flex flex-row gap-0.5 ">
                             <div className="flex items-center w-full">
                                 {isChecked ? (
                                 <div onClick={onChangeCheckbox} className='text-white mr-2 bg-[rgb(255,100,59)] rounded-full w-6 h-6 flex items-center justify-center cursor-pointer'>
@@ -61,7 +61,7 @@ export default function Card({ key, id, value, onDelete }) {
                                 )}
                                 <p
                                     onClick={onChangeCheckbox}
-                                    className="text-gray-950 select-none focus:outline-none transition cursor-pointer w-full max-w-[180px] items-center break-words"
+                                    className="py-0.5 text-gray-950 select-none focus:outline-none transition cursor-pointer w-full max-w-[180px] items-center break-words"
                                     style={{
                                         textDecoration: isChecked ? 'line-through' : 'none',
                                         opacity: isChecked ? 0.5 : 1,
