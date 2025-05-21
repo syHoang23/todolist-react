@@ -51,21 +51,16 @@ export default function Card({ key, id, value, onDelete }: Props) {
                     <>
                         <div className="flex flex-row gap-0.5 ">
                             <div className="flex items-center w-full">
-                                {isChecked ? (
-                                <div onClick={onChangeCheckbox} className='text-white mr-2 bg-[rgb(255,100,59)] rounded-full w-6 h-6 flex items-center justify-center cursor-pointer'>
+                                <div onClick={onChangeCheckbox} className='text-white mr-2 rounded-full bor w-6 h-6 flex items-center justify-center cursor-pointer select-none' 
+                                style={{ backgroundColor: isChecked ? 'rgb(255, 100, 59)' : 'rgb(229, 231, 235)',
+                                         border: isChecked ? 'none' : '2px solid #D1D5DC',
+                                 }}>
+                                    {isChecked ? (
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                                     </svg>
+                                    ): null}
                                 </div>
-                                
-                                ):(
-                                <input
-                                    type="checkbox"
-                                    onChange={onChangeCheckbox}
-                                    checked={isChecked}
-                                    className="mr-2 accent-orange-500 w-6 h-6 rounded-full appearance-none border-2 border-gray-300 checked:bg-orange-500 checked:border-transparent focus:outline-none transition duration-200 cursor-pointer"
-                                />
-                                )}
                                 <p
                                     onClick={onChangeCheckbox}
                                     className="py-0.5 text-gray-950 select-none focus:outline-none transition cursor-pointer w-full max-w-[180px] items-center break-words"
