@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import Input from './Input';
 
 interface Props {
-    key: number;
     id: number;
     value: string;
     onDelete: (id: number) => void;
 }
 
-export default function Card({ key, id, value, onDelete }: Props) {
+export default function Card({ id, value, onDelete }: Props) {
     const [isChecked, setIsChecked] = useState(false);
     const [isEdit, setIsEdit] = useState(false);
     const [input, setInput] = useState(value);
@@ -35,7 +34,7 @@ export default function Card({ key, id, value, onDelete }: Props) {
 
     return (
         <>
-            <div className='flex-wrap w-full' id={id.toString()} key={key}>
+            <div className='flex-wrap w-full' id={id.toString()}>
                 {isEdit ? (
                     <>
                         <div className="flex flex-row gap-4">
@@ -55,11 +54,11 @@ export default function Card({ key, id, value, onDelete }: Props) {
                                 style={{ backgroundColor: isChecked ? 'rgb(255, 100, 59)' : 'rgb(229, 231, 235)',
                                          border: isChecked ? 'none' : '2px solid #D1D5DC',
                                  }}>
-                                    {isChecked ? (
+                                    {isChecked && (
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                                     </svg>
-                                    ): null}
+                                    )}
                                 </div>
                                 <p
                                     onClick={onChangeCheckbox}

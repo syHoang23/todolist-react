@@ -24,7 +24,7 @@ export default function TodoList() {
         }
     }
     const onDelete = (id) => {
-        setTodos(array => array.filter(todo => todo.id !== id));
+        setTodos(newTodos => newTodos.filter(todo => todo.id !== id));
     };
 
     return (
