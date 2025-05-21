@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Input from './Input';
 
 interface Props {
@@ -22,10 +22,10 @@ export default function Card({ key, id, value, onDelete }: Props) {
     const onClickSave = () => {
         setIsEdit(false);
     };
-    const onChange = (e) => {
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value);
     }
-    const onSave = (e) => {
+    const onSave = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') 
             setIsEdit(false);
     }
@@ -35,7 +35,7 @@ export default function Card({ key, id, value, onDelete }: Props) {
 
     return (
         <>
-            <div className='flex-wrap w-full' id={id} key={key}>
+            <div className='flex-wrap w-full' id={id.toString()} key={key}>
                 {isEdit ? (
                     <>
                         <div className="flex flex-row gap-4">

@@ -1,7 +1,15 @@
 import React from 'react';
 import Card from './Card';
 
-export default function List({ todos, onDelete }) {
+interface Props {
+    todos: Array<{
+        id: number;
+        text: string;
+    }>;
+    onDelete: (id: number) => void;
+}
+
+export default function List({ todos, onDelete }: Props) {
     return (
         <div className='flex flex-col mt-4 rounded-2xl gap-1 flex-wrap'>
             {todos.map(todo => (

@@ -3,10 +3,10 @@ import List from './List';
 import logo from '../assets/note-svgrepo-com.svg';
 
 export default function TodoList() {
-    const [inputValue, setInputValue] = useState('');
-    const [todos, setTodos] = useState([]);
+    const [inputValue, setInputValue] = useState<string>('');
+    const [todos, setTodos] = useState<{id: number; text: string;}[]>([]);
 
-    const onChangeInput = (e) => {
+    const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
     };
     const addRow = () => {
@@ -18,7 +18,7 @@ export default function TodoList() {
         setTodos(array => [...array, newTodo]);
         setInputValue('');
     };
-    const enterKey = (e) => {
+    const enterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             addRow();
         }

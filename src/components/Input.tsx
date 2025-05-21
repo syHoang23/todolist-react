@@ -1,6 +1,12 @@
 import React from 'react';
 
-export default function Input({ value, onChange, onSave }) {
+interface Props {
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onSave: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+}
+
+export default function Input({ value, onChange, onSave }: Props) {
     return (
         <input 
             type="text" 
