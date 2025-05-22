@@ -62,7 +62,7 @@ export default function Card({ id, value, onDelete }: Props) {
                                 </div>
                                 <p
                                     onClick={onChangeCheckbox}
-                                    className="py-0.5 text-gray-950 select-none focus:outline-none transition cursor-pointer w-full max-w-[190px] sm:max-w-[430px] items-center break-words"
+                                    className="py-0.5 text-gray-950 select-none focus:outline-none transition cursor-pointer w-full max-w-[190px] sm:max-w-[290px] items-center break-words"
                                     style={{
                                         textDecoration: isChecked ? 'line-through' : 'none',
                                         opacity: isChecked ? 0.5 : 1,
