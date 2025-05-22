@@ -43,7 +43,7 @@ export default function TodoList() {
                     onKeyDown={enterKey}
                 />
                 <div className='absolute top-0 right-0 bottom-0 flex items-center justify-center'>
-                    <button className='py-4 px-10 cursor-pointer hover:border-none bg-[rgb(255,100,59)] hover:bg-orange-600 rounded-4xl' onClick={addRow} > Add </button>
+                    <button className='py-4 px-10 cursor-pointer hover:border-none bg-[rgb(255,100,59)] hover:bg-orange-600 rounded-4xl transition delay-100 duration-300 ease-in-out hover:-translate-y-0 hover:scale-110' onClick={addRow} > Add </button>
                 </div>
             </div>
         </div>
