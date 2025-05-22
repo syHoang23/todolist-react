@@ -35,7 +35,7 @@ export default function TodoList() {
                 <img className='w-6 h-6 shadow-md' src={logo}/>
             </div>
             <div className='relative w-full'>
-                <input className='pr-32 w-full text-sm bg-gray-300 border-none text-black rounded-full py-4 px-8 '
+                <input className='pr-32 w-full text-sm bg-gray-300 border-none text-black focus:outline-none rounded-full py-4 px-8 '
                     type="text"
                     value={inputValue}
                     placeholder="Add your task"
