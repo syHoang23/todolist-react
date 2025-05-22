@@ -50,7 +50,7 @@ export default function Card({ id, value, onDelete }: Props) {
                     <>
                         <div className="flex flex-row gap-0.5 ">
                             <div className="flex items-center w-full">
-                                <div onClick={onChangeCheckbox} className='text-white mr-2 rounded-full bor w-6 h-6 flex items-center justify-center cursor-pointer select-none' 
+                                <div onClick={onChangeCheckbox} className='text-white mr-2 rounded-full w-6 h-6 flex items-center justify-center cursor-pointer select-none' 
                                 style={{ backgroundColor: isChecked ? 'rgb(255, 100, 59)' : 'rgb(229, 231, 235)',
                                          border: isChecked ? 'none' : '2px solid #D1D5DC',
                                  }}>
