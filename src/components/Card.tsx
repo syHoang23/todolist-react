@@ -34,7 +34,7 @@ export default function Card({ id, value, onDelete }: Props) {
 
     return (
         <>
-            <div className='flex-wrap w-full' id={id.toString()}>
+            <div className='flex-wrap w-full animate-[slide-on_0.5s_ease-out_forwards]' id={id.toString()}>
                 {isEdit ? (
                     <>
                         <div className="flex flex-row gap-4">

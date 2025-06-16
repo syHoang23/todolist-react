@@ -30,11 +30,11 @@ export default function TodoList() {
     return (
         <>
         <div className='flex flex-col items-start justify-start gap-4'>
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-2 animate-[slide-right_1s_ease-out_forwards]'>
                 <h2 className='text-blue-900 text-3xl float-left font-mono w-full font-bold select-none'>To-Do List</h2>
                 <img className='w-6 h-6 shadow-md' src={logo}/>
             </div>
-            <div className='relative w-full'>
+            <div className='relative w-full animate-[slide-left_1s_ease-out_forwards]'>
                 <input className='pr-32 w-full text-sm bg-gray-300 border-none text-black focus:outline-none rounded-full py-4 px-8 '
                     type="text"
                     value={inputValue}
